@@ -1,0 +1,95 @@
+body {
+	background-image: url("/images/background.jpg");
+	background-size: 100%;
+}
+
+footer {
+	background-color: #EEEEEE !important;
+	opacity: 0.7;
+	padding: 5px;
+	position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.container {
+	margin: 10px;
+	movi
+}
+
+.navbar {
+	margin-top: 20px;
+}
+
+#frmlogout, #frmlogin {
+	display: inline;
+}
+
+.form-signin {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 0 40px 0;
+	background-color: #EEEEEE;
+	opacity: 0.9;
+}
+
+.info {
+	padding: 5px; background-color : #EEEEEE;
+	opacity: 0.9;
+	background-color: #EEEEEE;
+}
+
+.movie {
+	display: flex;
+	height: 150px;
+	background-color: #DDDDDD;
+	margin: 2px;
+}
+
+.actor {
+  height: 150px;
+  background-color: #DDDDDD;
+  margin: 2px;
+}
+
+.movie-image, .movie-info {
+	width: calc(50% - 2px);
+	padding: 2px;
+}
+
+.movie-details {
+	display: flex;
+}
+
+.movie-detail__image {
+	width: 20%;
+}
+
+.movie-detail__description {
+	width: 80%;
+	padding: 0 10px;
+}
+
+.movie-edit input {
+	width: 400px;
+}
+
+.movie-edit textarea {
+	width: 600px;
+	height: 200px;
+}
+
+.movie-edit button {
+	float: right;
+}
+
+.add-div {
+	padding: 5px;
+}
+
+.add-button {
+	color: white;
+	background-color: #337ab7;
+	padding: 5px;
+}

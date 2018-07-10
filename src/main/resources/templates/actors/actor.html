@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" th:include="layout/main :: page"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>Filmoteca</title>
+<link>
+</head>
+<body>
+
+	<div th:fragment="content">
+
+		<div class="row info">
+			<p th:text="${actor.firstName}"></p>
+			<p th:text="${actor.lastName}"></p>
+			<p th:text="${#dates.format(actor.dob, 'yyyy')}"></p>
+		</div>
+	</div>
+
+</body>
+</html>

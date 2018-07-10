@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" th:include="layout/main :: page"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+>
+<head>
+<title>Filmoteca</title>
+<link>
+</head>
+<body>
+
+	<div th:fragment="content">
+
+		<div class="row info">
+			<h2 class="info" th:text="${movie.title}"></h2>
+			<a sec:authorize="hasAuthority('ADMIN')"
+				th:href="@{/movie/edit/} + ${movie.id}">Edit info</a>
+			<h3 th:text="${#dates.format(movie.dor, 'yyyy')}"></h3>
+			<div class="movie-details">
+				<img class="movie-detail__image" th:src="@{${movie.imgPath}}" />
+				<div class="movie-detail__description">
+				  <p th:text="${movie.description}"></p>
+				  <h4>Actores:</h4>
+				  <ul>
+					  <li th:each="actor : ${movie.actors}" th:text="${actor.firstName + ' ' + actor.lastName}">
+					  </li >
+				  </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" th:include="layout/main :: page">
+<head>
+<title>Filmoteca</title>
+<link>
+</head>
+<body>
+
+	<div th:fragment="content">
+
+		<h2 class="row info">Filmoteca</h2>
+		<div class="row info">
+			<div class="col-md-12">
+				<p>Aquí podrás encontrar la información más actualizada y veraz
+					del mundo del cine</p>
+			</div>
+		</div>
+
+		<div class="row info">
+			<div th:each="movie : ${movies}" class="col-md-3 movie">
+				<img class="movie-image" th:src="@{${movie.imgPath}}" />
+				<div class="movie-info">
+					<p th:text="${movie.title}"></p>
+					<p th:text="${#dates.format(movie.dor, 'yyyy')}"></p>
+					<a th:href="@{/movie/view/} + ${movie.id}">Read More</a>
+				</div>
+			</div>
+		</div>
+
+    <div class="row add-div">
+      <a class="add-button" href="/admin/add/movie">Añadir pelicula</a>
+    </div>
+
+	</div>
+
+</body>
+</html>

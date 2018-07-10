@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" th:include="layout/main :: page">
+<head>
+<title>Filmoteca</title>
+<link>
+</head>
+<body>
+
+	<div th:fragment="content">
+
+		<form class="row info movie-edit" th:object="${actor}"
+			th:action="@{/actor/save}" method="post">
+			<input type="hidden" th:field="*{id}" />
+			<div>
+				<div class="col-md-2">First Name:</div>
+				<input type="text" th:field="*{firstName}" />
+			</div>
+      <div>
+        <div class="col-md-2">Last Name:</div>
+        <input type="text" th:field="*{lastName}" />
+      </div>
+			<div>
+				<div class="col-md-2">DOB:</div>
+				<input type="datetime" th:field="*{dob}" />
+			</div>
+			<div>
+				<div>
+					<button type="submit">Save</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

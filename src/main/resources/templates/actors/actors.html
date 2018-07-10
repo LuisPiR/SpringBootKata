@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" th:include="layout/main :: page"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>Filmoteca</title>
+<link>
+</head>
+<body>
+
+	<div th:fragment="content">
+
+		<h2 class="row info">Filmoteca</h2>
+		<div class="row info">
+			<div class="col-md-12">
+				<p>Aquí podrás encontrar la información más actualizada y veraz
+					del mundo del cine</p>
+			</div>
+		</div>
+
+		<div class="row info">
+			<div th:each="actor : ${actors}" class="col-md-3 actor">
+				<p th:text="${actor.firstName}"></p>
+	      <p th:text="${actor.lastName}"></p>
+	      <p th:text="${#dates.format(actor.dob, 'yyyy')}"></p>
+	      <a sec:authorize="hasAuthority('ADMIN')"
+	        th:href="@{/actor/edit/} + ${actor.id}">Edit info</a>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
